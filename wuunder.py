@@ -1,5 +1,4 @@
 '''A Weather Underground API wrapper'''
-#use urllib.request instead for less dependencies
 import requests, dateutil.parser, json, re
 #import wuextras
 
