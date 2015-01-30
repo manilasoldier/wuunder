@@ -8,7 +8,7 @@ class Wunderground:
 		
 	'''
 	from wunderground import Wunderground
-	###Figure out location will work...
+	###Figure out how location will work...
 	wu=Wunderground("<INSERT_API_KEY>")
 	wu.history('2014-01-23')['history']['dailysummary'][0]['maxtempi']
 	Fahrenheit maximum temperature
