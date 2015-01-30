@@ -69,5 +69,3 @@ class Wunderground:
 				
 			else:
 				pass
-	
-'''Weather Underground error class'''
