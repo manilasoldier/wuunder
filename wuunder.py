@@ -1,5 +1,5 @@
 '''A Weather Underground API wrapper'''
-import requests, dateutil.parser, json, re
+import requests, dateutil.parser, json, re, wuextras
 #import wuextras
 
 class Wunderground:
