@@ -20,6 +20,10 @@ class Wunderground:
 		self.loc="{},{}".format(lat, lon)
 	
 	def us_loc(self, city, us_state):
+		try:
+			us_state=wuextras.state_abbreviations[us_state]
+		except KeyError:
+			us_state=us_state
 		locs=tuple(map(lambda s: s.replace(" ", "_"), [us_state, city]))
 		self.loc="{}/{}".format(*locs)
 	
