@@ -45,14 +45,14 @@ class Wunderground:
 		self.cond=requests.get("{url}/conditions/q/{location}.json".format(**cdict)).json()
 		cond_curr=self.cond['current_observation']
 		if c_m:
-			self.tnow=cond_curr['temp_c']
+			self.temp=cond_curr['temp_c']
 			wugex=re.compile(".+_(c|kph|km|metric|dir|mb)$|weather")
 			good_keys=filter(lambda x: wugex.match(x), cond_curr)
 			for key in good_keys:
 				print("{}: {}".format(key.capitalize(), cond_curr[key]))
 				
 		else:
-			self.tnow=cond_curr['temp_f']
+			self.temp=cond_curr['temp_f']
 			wugex=re.compile(".+_(in|f|mph|mi|dir)$|weather")
 			good_keys=filter(lambda x: wugex.match(x), cond_curr)
 			for key in good_keys:
