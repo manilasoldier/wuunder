@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+__pycache__/wuunder.cpython-34.pyc
 *.py[cod]
 
 # C extensions
@@ -52,3 +53,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# OS X
+.DS_Store
