@@ -1,11 +1,7 @@
 # Byte-compiled / optimized / DLL files
-<<<<<<< HEAD
-__pycache__/
-__pycache__/wuunder.cpython-34.pyc
-=======
 __pycache__/**
->>>>>>> 10a3efafe43174a43009eeb63161f77ed15420b4
 *.py[cod]
+*$py.class
 
 # C extensions
 *.so
@@ -58,5 +54,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# OS X
+# Custom
 .DS_Store
+__pycache__/wuunder.cpython-34.pyc
+australis.py
