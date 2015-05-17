@@ -1,8 +1,8 @@
 '''A Weather Underground API wrapper'''
 import requests, dateutil.parser, json, re, os, pickle
-#4/2/15: Need to add functionality for automatically getting location
+from wuunderklas import Location
 
-class Wunderground:
+class Wuunder(Location):
 	def __init__(self, api_key, auto_ip=False):
 		self.base_url="{}/{}/".format("http://api.wunderground.com/api", api_key)
 		with open(os.path.join(os.path.dirname(__file__), "abbrevs.pickle"), 'rb') as f:
@@ -10,23 +10,8 @@ class Wunderground:
 		if auto_ip:
 			self.loc="autoip"
 	
-	def coord(self, lat, lon):
-		self.loc="{},{}".format(lat, lon)
-	
-	def us_loc(self, city, us_state):
-		try:
-			us_state=self.state_abbrevs[us_state]
-		except KeyError:
-			us_state=us_state
-		locs=tuple(map(lambda s: s.replace(" ", "_"), [us_state, city]))
-		self.loc="{}/{}".format(*locs)
-	
 	def station(self, personal_weather_station):
 		self.loc="pws:{}".format(personal_weather_station)
-		
-	def country(self, city, country):
-		locs=tuple(map(lambda s: s.replace(" ", "_"), [country, city]))
-		self.loc="{}/{}".format(*locs)
 	
 	def conditions(self, fields=None, c_m=False):
 		'''	1. 'fields' is an optional tuple parameter containing fields to be accessed in the json response
