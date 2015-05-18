@@ -22,6 +22,12 @@ class Location:
 			us_state=us_state
 		locs=tuple(map(lambda s: s.replace(" ", "_"), [us_state, city]))
 		self.loc="{}/{}".format(*locs)
+		
+	def ap(self, airport_code):
+		pass
+	
+	def zip(self, zip_code):
+		pass
 
 class Almanac(Location):
 	def __init__(self, api_key, auto_ip=True):
@@ -86,4 +92,5 @@ class Almanac(Location):
 			
 			#Add in custom error class for such a situation?
 				
+			#The ability to store many locations?
 		
